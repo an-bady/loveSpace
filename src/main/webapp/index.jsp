@@ -13,6 +13,7 @@
 <br>
 <br>
 <a href="https://ai.bbai520.com/Lin&Si.html">点击进入我们的世界</a>
+<a href="/welcome.jsp">点击进</a>
 
 </body>
 </html>
