@@ -7,7 +7,7 @@
 
     <meta charset="UTF-8">
 
-    <title>HTML5 Canvas发光Loading动画</title>
+    <title>思淋空间</title>
 
     <style>
         html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
@@ -191,41 +191,43 @@
 <script src="/resources/js/index.js"></script>
 
 <div style="text-align:center;clear:both;width: 100%">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <div class="spinner" style="float: left;width: 5%"></div>
-    <div class="spinner2" style="float: left;width: 40%">
+    <div  class="spinner" style="margin-left:15%;float: left;width: 5%"></div>
+    <div class="spinner2" style="float: left;width: 5%">
         <div class="rect1"></div>
         <div class="rect2"></div>
         <div class="rect3"></div>
         <div class="rect4"></div>
         <div class="rect5"></div>
     </div>
-    <div class="spinner3" style="float: left;width: 40%">
+    <div class="spinner3" style="float: left;width: 5%">
         <div class="cube1"></div>
         <div class="cube2"></div>
     </div>
     <div class="spinner" style="float: left;width: 5%"></div>
-    <div style="float: left;width: 80%">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span style="color:wheat;font-weight:bold;font-size:60px">淋 宝～</span>
+    <div style="margin-top: 5%;float: left;width: 30%">
+        <span style="color:wheat;font-weight:bold;font-size:30px">淋 宝～</span>
         <br>
         <br>
         <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span style="color:blueviolet;font-weight:bold;font-size:60px">这是我们的世界～</span>
-        <a href="https://ai.bbai520.com/Lin&Si.html">点击进入我们的世界</a>
+        <span style="color:blueviolet;font-weight:bold;font-size:30px">情人节快乐～</span>
+        <br>
+        <br>
+        <br>
+        <a href="https://ai.bbai520.com/Lin&Si.html"><span style="color:cornflowerblue;font-weight:bold;font-size:10px">点击进入我们的世界</span></a>
     </div>
+    <div class="spinner" style="float: left;width: 5%"></div>
+    <div class="spinner2" style="float: left;width: 5%">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+    <div class="spinner3" style="float: left;width: 5%">
+        <div class="cube1"></div>
+        <div class="cube2"></div>
+    </div>
+    <div class="spinner" style="float: left;width: 5%"></div>
 </div>
 </body>
 
