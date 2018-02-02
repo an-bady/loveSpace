@@ -78,7 +78,7 @@
         .spinner {
             width: 60px;
             height: 60px;
-            background-color: #67CF22;
+            background-color: #00FFFF;
 
             margin: 100px auto;
             -webkit-animation: rotateplane 1.2s infinite ease-in-out;
@@ -121,7 +121,7 @@
         }
 
         .spinner2 > div {
-            background-color: #67CF22;
+            background-color: #FF00DE;
             height: 100%;
             width: 6px;
             display: inline-block;
@@ -178,7 +178,7 @@
         }
 
         .cube1, .cube2 {
-            background-color: #67CF22;
+            background-color: #FFFF00;
             width: 30px;
             height: 30px;
             position: absolute;
@@ -248,39 +248,39 @@
 <script src="/resources/js/index.js"></script>
 
 <div style="text-align:center;clear:both;width: 100%">
-    <div class="spinner" style="margin-left:15%;float: left;width: 5%"></div>
-    <div class="spinner2" style="float: left;width: 5%">
+    <div class="spinner" style="margin-top: 15%;margin-left:15%;float: left;width: 5%"></div>
+    <div class="spinner2" style="margin-top: 15%;float: left;width: 5%">
         <div class="rect1"></div>
         <div class="rect2"></div>
         <div class="rect3"></div>
         <div class="rect4"></div>
         <div class="rect5"></div>
     </div>
-    <div class="spinner3" style="float: left;width: 5%">
+    <div class="spinner3" style="margin-top: 15%;float: left;width: 5%">
         <div class="cube1"></div>
         <div class="cube2"></div>
     </div>
-    <div class="spinner" style="float: left;width: 5%"></div>
+    <div class="spinner" style="margin-top: 15%;float: left;width: 5%"></div>
     <div style="margin-top: 5%;float: left;width: 30%">
-        <span style="color:wheat;font-weight:bold;font-size:40px">淋 宝～</span>
+        <span style="color:wheat;font-weight:bold;font-size:50px">淋 宝～</span>
         <br><br><br>
-        <span style="color:blueviolet;font-weight:bold;font-size:40px">情人节快乐!</span>
-        <br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br>
+        <span style="color:blueviolet;font-weight:bold;font-size:50px">情人节快乐!</span>
+        <br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br>
         <a href="https://ai.bbai520.com/Lin&Si.html"><span style="color:brown;font-weight:bolder;font-size:15px"><--点击进入我们的世界--></span></a>
     </div>
-    <div class="spinner" style="float: left;width: 5%"></div>
-    <div class="spinner2" style="float: left;width: 5%">
+    <div class="spinner" style="margin-top: 15%;float: left;width: 5%"></div>
+    <div class="spinner2" style="margin-top: 15%;float: left;width: 5%">
         <div class="rect1"></div>
         <div class="rect2"></div>
         <div class="rect3"></div>
         <div class="rect4"></div>
         <div class="rect5"></div>
     </div>
-    <div class="spinner3" style="float: left;width: 5%">
+    <div class="spinner3" style="margin-top: 15%;float: left;width: 5%">
         <div class="cube1"></div>
         <div class="cube2"></div>
     </div>
-    <div class="spinner" style="margin-right:15%;float: left;width: 5%"></div>
+    <div class="spinner" style="margin-top: 15%;margin-right:15%;float: left;width: 5%"></div>
 </div>
 </body>
 
