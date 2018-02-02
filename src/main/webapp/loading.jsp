@@ -16,7 +16,6 @@
 
     <style>
         body {
-            background: #000;
         }
 
         img {
@@ -180,7 +179,7 @@
 
 </head>
 
-<body>
+<body background="/resources/img/3.jpeg">
 
 <!-- source image and inspiration from Ramiro Galan on Dribbble: http://dribbble.com/shots/674715-Sparkle-Light-Trail -->
 <canvas id="c"></canvas>
@@ -205,15 +204,28 @@
     </div>
     <div class="spinner" style="float: left;width: 5%"></div>
     <div style="margin-top: 5%;float: left;width: 30%">
-        <span style="color:wheat;font-weight:bold;font-size:30px">淋 宝～</span>
+        <span style="color:wheat;font-weight:bold;font-size:40px">淋 宝～</span>
         <br>
         <br>
         <br>
-        <span style="color:blueviolet;font-weight:bold;font-size:30px">情人节快乐～</span>
+        <span style="color:blueviolet;font-weight:bold;font-size:40px">情人节快乐!</span>
         <br>
         <br>
         <br>
-        <a href="https://ai.bbai520.com/Lin&Si.html"><span style="color:cornflowerblue;font-weight:bold;font-size:10px">点击进入我们的世界</span></a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="https://ai.bbai520.com/Lin&Si.html"><span style="color:brown;font-weight:bolder;font-size:15px"><--点击进入我们的世界--></span></a>
     </div>
     <div class="spinner" style="float: left;width: 5%"></div>
     <div class="spinner2" style="float: left;width: 5%">
@@ -227,7 +239,7 @@
         <div class="cube1"></div>
         <div class="cube2"></div>
     </div>
-    <div class="spinner" style="float: left;width: 5%"></div>
+    <div class="spinner" style="margin-right:15%;float: left;width: 5%"></div>
 </div>
 </body>
 
