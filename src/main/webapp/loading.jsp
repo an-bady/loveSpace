@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <c:set var="ctx" value="${pageContext.request.contextPath}"/>
@@ -10,7 +10,40 @@
     <title>思淋空间</title>
 
     <style>
-        html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline
+        }
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+            display: block
+        }
+
+        body {
+            line-height: 1
+        }
+
+        ol, ul {
+            list-style: none
+        }
+
+        blockquote, q {
+            quotes: none
+        }
+
+        blockquote:before, blockquote:after, q:before, q:after {
+            content: '';
+            content: none
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0
+        }
 
     </style>
 
@@ -27,7 +60,7 @@
         canvas {
             display: block;
 
-            margin:0 auto;
+            margin: 0 auto;
 
             /* uncomment to test overlay */
 
@@ -53,22 +86,30 @@
         }
 
         @-webkit-keyframes rotateplane {
-            0% { -webkit-transform: perspective(120px) }
-            50% { -webkit-transform: perspective(120px) rotateY(180deg) }
-            100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+            0% {
+                -webkit-transform: perspective(120px)
+            }
+            50% {
+                -webkit-transform: perspective(120px) rotateY(180deg)
+            }
+            100% {
+                -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg)
+            }
         }
 
         @keyframes rotateplane {
             0% {
                 transform: perspective(120px) rotateX(0deg) rotateY(0deg);
                 -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
-            } 50% {
-                  transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-                  -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
-              } 100% {
-                    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-                    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-                }
+            }
+            50% {
+                transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+                -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+            }
+            100% {
+                transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+                -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+            }
         }
 
         .spinner2 {
@@ -110,18 +151,23 @@
         }
 
         @-webkit-keyframes stretchdelay {
-            0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
-            20% { -webkit-transform: scaleY(1.0) }
+            0%, 40%, 100% {
+                -webkit-transform: scaleY(0.4)
+            }
+            20% {
+                -webkit-transform: scaleY(1.0)
+            }
         }
 
         @keyframes stretchdelay {
             0%, 40%, 100% {
                 transform: scaleY(0.4);
                 -webkit-transform: scaleY(0.4);
-            }  20% {
-                   transform: scaleY(1.0);
-                   -webkit-transform: scaleY(1.0);
-               }
+            }
+            20% {
+                transform: scaleY(1.0);
+                -webkit-transform: scaleY(1.0);
+            }
         }
 
         .spinner3 {
@@ -149,29 +195,41 @@
         }
 
         @-webkit-keyframes cubemove {
-            25% { -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5) }
-            50% { -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg) }
-            75% { -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5) }
-            100% { -webkit-transform: rotate(-360deg) }
+            25% {
+                -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5)
+            }
+            50% {
+                -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg)
+            }
+            75% {
+                -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5)
+            }
+            100% {
+                -webkit-transform: rotate(-360deg)
+            }
         }
 
         @keyframes cubemove {
             25% {
                 transform: translateX(42px) rotate(-90deg) scale(0.5);
                 -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
-            } 50% {
-                  transform: translateX(42px) translateY(42px) rotate(-179deg);
-                  -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
-              } 50.1% {
-                    transform: translateX(42px) translateY(42px) rotate(-180deg);
-                    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
-                } 75% {
-                      transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
-                      -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
-                  } 100% {
-                        transform: rotate(-360deg);
-                        -webkit-transform: rotate(-360deg);
-                    }
+            }
+            50% {
+                transform: translateX(42px) translateY(42px) rotate(-179deg);
+                -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+            }
+            50.1% {
+                transform: translateX(42px) translateY(42px) rotate(-180deg);
+                -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+            }
+            75% {
+                transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+                -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+            }
+            100% {
+                transform: rotate(-360deg);
+                -webkit-transform: rotate(-360deg);
+            }
         }
     </style>
 
@@ -190,7 +248,7 @@
 <script src="/resources/js/index.js"></script>
 
 <div style="text-align:center;clear:both;width: 100%">
-    <div  class="spinner" style="margin-left:15%;float: left;width: 5%"></div>
+    <div class="spinner" style="margin-left:15%;float: left;width: 5%"></div>
     <div class="spinner2" style="float: left;width: 5%">
         <div class="rect1"></div>
         <div class="rect2"></div>
@@ -205,26 +263,9 @@
     <div class="spinner" style="float: left;width: 5%"></div>
     <div style="margin-top: 5%;float: left;width: 30%">
         <span style="color:wheat;font-weight:bold;font-size:40px">淋 宝～</span>
-        <br>
-        <br>
-        <br>
+        <br><br><br>
         <span style="color:blueviolet;font-weight:bold;font-size:40px">情人节快乐!</span>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        <br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br>
         <a href="https://ai.bbai520.com/Lin&Si.html"><span style="color:brown;font-weight:bolder;font-size:15px"><--点击进入我们的世界--></span></a>
     </div>
     <div class="spinner" style="float: left;width: 5%"></div>
