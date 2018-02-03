@@ -377,7 +377,7 @@
     <div style="margin-top: 5%;float: left;width: 30%">
         <span style="color:wheat;font-weight:bold;font-size:45px">淋 宝～</span>
         <br><br><br>
-        <span style="color:wheat;font-weight:bold;font-size:20px">累了先听首歌吧～</span>
+        <span style="color:wheat;font-weight:bold;font-size:20px">静下心来先听首歌吧～</span>
         <br><br><br>
         <span style="color:blueviolet;font-weight:bold;font-size:50px">情人节快乐!</span>
         <br><br><br><br><br><br><br> <br><br><br><br>
