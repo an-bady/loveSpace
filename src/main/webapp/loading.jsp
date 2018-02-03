@@ -357,7 +357,7 @@
 
 
 <script src='/resources/js/jquery.js'></script>
-
+<embed src="/resources/music/1.mp3" loop="11" autostar="true" hidden="true"/>
 <script src="/resources/js/index.js"></script>
 
 <div style="text-align:center;clear:both;width: 100%">
