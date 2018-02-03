@@ -8,12 +8,26 @@ gallery.id = "gallery";
 
 //Slide function controls the building of each slie
 function slide() {
-	var imgs = ["/resources/images/Home.jpg",
-        "/resources/images/wsm1.jpeg"
-
+    var imgs = [
+        "/resources/images/Home.jpg",
+    	"/resources/images/wsm1.jpeg",
+    	"/resources/images/we1.jpeg",
+    	"/resources/images/lin1.jpeg",
+    	"/resources/images/lin2.jpeg",
+    	"/resources/images/lin3.jpeg",
+    	"/resources/images/lin4.jpeg",
+    	"/resources/images/lin5.jpeg",
+    	"/resources/images/lin6.jpeg",
+    	"/resources/images/lin7.jpeg",
+    	"/resources/images/lin8.jpeg",
+    	"/resources/images/lin9.jpeg",
+    	"/resources/images/lin10.jpeg",
+    	"/resources/images/lin11.jpeg",
+    	"/resources/images/end.jpg",
 	];
 
-	var topL = document.createElement("div"),
+
+    var topL = document.createElement("div"),
 		topR = document.createElement("div"),
 		bottomL = document.createElement("div"),
 		bottomR = document.createElement("div"),
