@@ -75,14 +75,127 @@
     </style>
 
     <style type="text/css">
-        .spinner {
+        .spinnerLin1 {
             width: 60px;
             height: 60px;
             background-color: #00FFFF;
+            background-image: url("/resources/img/lin1.jpg");
 
             margin: 100px auto;
-            -webkit-animation: rotateplane 1.2s infinite ease-in-out;
-            animation: rotateplane 1.2s infinite ease-in-out;
+            -webkit-animation: rotateplane 4.2s infinite ease-in-out;
+            animation: rotateplane 4.2s infinite ease-in-out;
+        }
+
+        @-webkit-keyframes rotateplane {
+            0% {
+                -webkit-transform: perspective(120px)
+            }
+            50% {
+                -webkit-transform: perspective(120px) rotateY(180deg)
+            }
+            100% {
+                -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg)
+            }
+        }
+
+        @keyframes rotateplane {
+            0% {
+                transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+                -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+            }
+            50% {
+                transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+                -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+            }
+            100% {
+                transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+                -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+            }
+        }
+        .spinnerLin2 {
+            width: 60px;
+            height: 60px;
+            background-color: #00FFFF;
+            background-image: url("/resources/img/lin2.jpg");
+
+            margin: 100px auto;
+            -webkit-animation: rotateplane 4.2s infinite ease-in-out;
+            animation: rotateplane 4.2s infinite ease-in-out;
+        }
+
+        @-webkit-keyframes rotateplane {
+            0% {
+                -webkit-transform: perspective(120px)
+            }
+            50% {
+                -webkit-transform: perspective(120px) rotateY(180deg)
+            }
+            100% {
+                -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg)
+            }
+        }
+
+        @keyframes rotateplane {
+            0% {
+                transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+                -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+            }
+            50% {
+                transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+                -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+            }
+            100% {
+                transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+                -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+            }
+        }
+
+        .spinnerSi2 {
+            width: 60px;
+            height: 60px;
+            background-color: #00FFFF;
+            background-image: url("/resources/img/si2.jpg");
+
+            margin: 100px auto;
+            -webkit-animation: rotateplane 4.2s infinite ease-in-out;
+            animation: rotateplane 4.2s infinite ease-in-out;
+        }
+
+        @-webkit-keyframes rotateplane {
+            0% {
+                -webkit-transform: perspective(120px)
+            }
+            50% {
+                -webkit-transform: perspective(120px) rotateY(180deg)
+            }
+            100% {
+                -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg)
+            }
+        }
+
+        @keyframes rotateplane {
+            0% {
+                transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+                -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+            }
+            50% {
+                transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+                -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+            }
+            100% {
+                transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+                -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+            }
+        }
+        .spinnerSi1 {
+            width: 60px;
+            height: 60px;
+            background-color: #00FFFF;
+            background-image: url("/resources/img/si1.jpg");
+
+            margin: 100px auto;
+            -webkit-animation: rotateplane 4.2s infinite ease-in-out;
+            animation: rotateplane 4.2s infinite ease-in-out;
         }
 
         @-webkit-keyframes rotateplane {
@@ -237,7 +350,7 @@
 
 </head>
 
-<body background="/resources/img/3.jpeg">
+<body background="/resources/img/back.jpeg">
 
 <!-- source image and inspiration from Ramiro Galan on Dribbble: http://dribbble.com/shots/674715-Sparkle-Light-Trail -->
 <canvas id="c"></canvas>
@@ -248,7 +361,7 @@
 <script src="/resources/js/index.js"></script>
 
 <div style="text-align:center;clear:both;width: 100%">
-    <div class="spinner" style="margin-top: 15%;margin-left:15%;float: left;width: 5%"></div>
+    <div class="spinnerLin1" style="margin-left:8%;float: left;width: 8%;height: 10%"></div>
     <div class="spinner2" style="margin-top: 15%;float: left;width: 5%">
         <div class="rect1"></div>
         <div class="rect2"></div>
@@ -260,15 +373,19 @@
         <div class="cube1"></div>
         <div class="cube2"></div>
     </div>
-    <div class="spinner" style="margin-top: 15%;float: left;width: 5%"></div>
+    <div class="spinnerLin2" style="margin-top: 25%;float: left;width: 8%;height: 10%"></div>
     <div style="margin-top: 5%;float: left;width: 30%">
-        <span style="color:wheat;font-weight:bold;font-size:50px">淋 宝～</span>
+        <span style="color:wheat;font-weight:bold;font-size:45px">淋 宝～</span>
         <br><br><br>
         <span style="color:blueviolet;font-weight:bold;font-size:50px">情人节快乐!</span>
         <br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br>
         <a href="https://ai.bbai520.com/Lin&Si.html"><span style="color:brown;font-weight:bolder;font-size:15px"><--点击进入我们的世界--></span></a>
+        <br>
+        <br>
+        <br>
+        <a href="/photos.html"><span style="color:brown;font-weight:bolder;font-size:15px"><--点击进入我们的相册--></span></a>
     </div>
-    <div class="spinner" style="margin-top: 15%;float: left;width: 5%"></div>
+    <div class="spinnerSi1" style="margin-top: 25%;float: left;width: 8%;height: 10%"></div>
     <div class="spinner2" style="margin-top: 15%;float: left;width: 5%">
         <div class="rect1"></div>
         <div class="rect2"></div>
@@ -280,7 +397,7 @@
         <div class="cube1"></div>
         <div class="cube2"></div>
     </div>
-    <div class="spinner" style="margin-top: 15%;margin-right:15%;float: left;width: 5%"></div>
+    <div class="spinnerSi2" style="float: left;width: 8%;height: 10%"></div>
 </div>
 </body>
 
