@@ -384,6 +384,10 @@
         <br>
         <br>
         <a href="/photos.html"><span style="color:brown;font-weight:bolder;font-size:15px"><--点击进入我们的相册--></span></a>
+        <br>
+        <br>
+        <br>
+        <a href="/diary.jsp"><span style="color:brown;font-weight:bolder;font-size:15px"><--💗&nbsp;Love Diary/Story--></span></a>
     </div>
     <div class="spinnerSi1" style="margin-top: 25%;float: left;width: 8%;height: 10%"></div>
     <div class="spinner2" style="margin-top: 15%;float: left;width: 5%">
