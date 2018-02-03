@@ -377,6 +377,8 @@
     <div style="margin-top: 5%;float: left;width: 30%">
         <span style="color:wheat;font-weight:bold;font-size:45px">淋 宝～</span>
         <br><br><br>
+        <span style="color:wheat;font-weight:bold;font-size:30px">累了先听首歌吧～</span>
+        <br><br><br>
         <span style="color:blueviolet;font-weight:bold;font-size:50px">情人节快乐!</span>
         <br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br>
         <a href="https://ai.bbai520.com/Lin&Si.html"><span style="color:brown;font-weight:bolder;font-size:15px"><--点击进入我们的世界--></span></a>
