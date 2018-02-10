@@ -15,6 +15,8 @@
 
 </head>
 <body style="background-image: url(/resources/img/back3.png)">
+
+<embed src="/resources/music/2.mp3" loop="11" autostar="true" hidden="true"/>
 <%
     String datetime=new SimpleDateFormat("yyyy-MM-dd")
             .format(Calendar.getInstance()
@@ -56,6 +58,8 @@
         今天我....
         </textarea>
         <input type="submit" value="提交日记！">
+        <a href="/views/show/loading.jsp">
+            <span style="color:black;font-weight:bolder;font-size:5px">返回主页</span></a>
 
     </form>
 
