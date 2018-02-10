@@ -8,14 +8,8 @@ public class CommonPath {
     public static final String userPath = "/usr/local/src/wsm/data/user.txt";
 
     /*
-    lin 日记地址
+    日记地址
      */
-    public static final String linDiaryPath = "";
-
-    /*
-    si 日记地址
-     */
-    public static final String siDiaryPath = "";
-
+    public static final String DiaryPath = "/usr/local/src/wsm/data/diary";
 
 }
