@@ -23,6 +23,14 @@ public class RegisterServlet extends HttpServlet {
             request.getRequestDispatcher("/views/login/register.jsp").forward(request,response);
             return;
         }
+        if(password.equals("")){
+            String errorMessage = "注册错误：密码为空！";
+            request.setAttribute("errorMessage",errorMessage);
+            request.setAttribute("name",name);
+
+            request.getRequestDispatcher("/views/login/register.jsp").forward(request,response);
+            return;
+        }
 
         File users = new File(CommonPath.userPath);
 

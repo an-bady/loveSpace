@@ -5,7 +5,7 @@ public class CommonPath {
     /*
     用户注册地址
      */
-    public static final String userPath = "/usr/local/src/user.txt";
+    public static final String userPath = "/usr/local/src/wsm/data/user.txt";
 
     /*
     lin 日记地址
