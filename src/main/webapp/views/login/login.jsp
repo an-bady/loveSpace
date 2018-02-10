@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
 <html>
 <head>
     <title>💗 登陆 思淋空间 💗</title>
@@ -20,8 +21,11 @@
     <span style="color:palevioletred;font-weight:bolder;font-size:25px">欢迎登录思淋空间!</span>
     <br>
     <br>
-
-    <form action="loginServlet" method="post">
+    <span style="color:red;font-weight:bolder;font-size:15px">
+        <c:if test="${!empty requestScope.errorMessage}">${requestScope.errorMessage}
+        </c:if>
+    </span>
+    <form action="/loginServlet" method="post">
         账号： <input type="text" name="name"><br>
         密码： <input type="password" name="password"><br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
