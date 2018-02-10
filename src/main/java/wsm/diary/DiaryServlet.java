@@ -19,7 +19,7 @@ public class DiaryServlet extends HttpServlet {
         String mood = request.getParameter("mood");
         String diary = request.getParameter("diary");
 
-        String datetime=new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss")
+        String datetime=new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss")
                 .format(Calendar.getInstance()
                         .getTime());
 

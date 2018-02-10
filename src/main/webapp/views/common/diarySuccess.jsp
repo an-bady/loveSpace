@@ -17,10 +17,10 @@
     <br>
     <br>
     <a href="/views/show/diary.jsp">
-        <span style="color:rebeccapurple;font-weight:bolder;font-size:25px">返回继续提交日记</span></a>
+        <span style="color:rebeccapurple;font-weight:bolder;font-size:15px">返回继续提交日记</span></a>
     <br>
     <a href="/views/show/loading.jsp">
-        <span style="color:rebeccapurple;font-weight:bolder;font-size:25px">返回主页</span></a>
+        <span style="color:rebeccapurple;font-weight:bolder;font-size:15px">返回主页</span></a>
 
 </div>
 </body>
