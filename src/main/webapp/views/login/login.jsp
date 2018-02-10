@@ -34,6 +34,11 @@
         <input type="submit" value="登陆">
     </form>
 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <a href="/views/login/register.jsp">
         <span style="color:palevioletred;font-weight:bolder;font-size:15px">😄 没有账号？先注册吧 😄</span></a>
 </div>
