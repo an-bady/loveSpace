@@ -22,7 +22,6 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
 
         String read;
         while ((read = br.readLine()) != null) {
-
             if (read.contains("=")) {
                 String rName = read.split("=")[0];
                 String rPassword = read.split("=")[1];
@@ -31,15 +30,15 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
                     response.sendRedirect("/views/show/loading.jsp");
                     return;
                 }
-                String errorMessage = "登入错误：账号密码不一致或不存在该账号！<br> 请重新输入！";
-                request.setAttribute("errorMessage", errorMessage);
 
-                request.getRequestDispatcher("/views/login/login.jsp").forward(request, response);
-                return;
             }
-
-
         }
+
+        String errorMessage = "登入错误：账号密码不一致或不存在该账号！<br> 请重新输入！";
+        request.setAttribute("errorMessage", errorMessage);
+
+        request.getRequestDispatcher("/views/login/login.jsp").forward(request, response);
+        return;
 
 
     }
