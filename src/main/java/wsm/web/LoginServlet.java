@@ -2,6 +2,7 @@ package wsm.web;
 
 import wsm.common.CommonPath;
 
+import javax.servlet.http.HttpSession;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -27,6 +28,8 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
                 String rPassword = read.split("=")[1];
 
                 if (rName.equals(name) && rPassword.equals(password)) {
+                    HttpSession se = request.getSession();
+                    se.setAttribute("user",name);
                     response.sendRedirect("/views/show/loading.jsp");
                     return;
                 }
