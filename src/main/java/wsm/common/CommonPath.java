@@ -1,4 +1,4 @@
-package wsm;
+package wsm.common;
 
 public class CommonPath {
 

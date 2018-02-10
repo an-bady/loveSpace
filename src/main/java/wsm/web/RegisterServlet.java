@@ -1,6 +1,6 @@
 package wsm.web;
 
-import wsm.CommonPath;
+import wsm.common.CommonPath;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

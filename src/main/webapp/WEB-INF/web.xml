@@ -12,6 +12,10 @@
     <servlet-name>registerServlet</servlet-name>
     <servlet-class>wsm.web.RegisterServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>firstServlet</servlet-name>
+    <servlet-class>wsm.web.FirstServlet</servlet-class>
+  </servlet>
 
   <servlet-mapping>
     <servlet-name>loginServlet</servlet-name>
@@ -21,11 +25,15 @@
     <servlet-name>registerServlet</servlet-name>
     <url-pattern>/registerServlet</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>firstServlet</servlet-name>
+    <url-pattern>/firstServlet</url-pattern>
+  </servlet-mapping>
 
 
 
   <welcome-file-list>
-    <welcome-file>/views/login/login.jsp</welcome-file>
+    <welcome-file>/views/common/first.jsp</welcome-file>
   </welcome-file-list>
 
 
