@@ -10,14 +10,14 @@
 <head>
     <title>❌错误❌</title>
 </head>
-<body>
+<body background="/resources/img/back4.jpeg">
 
 <div id="div" style="margin-left:40%;margin-top:10%;width:30%; height:30%; border:0px solid #000;">
     ❌错误❌
     <br>
     <br>
     <a href="/views/common/first.jsp">
-        <span style="color:pink;font-weight:bolder;font-size:35px">返回</span></a>
+        <span style="color:pink;font-weight:bolder;font-size:25px">返回</span></a>
 
 </div>
 

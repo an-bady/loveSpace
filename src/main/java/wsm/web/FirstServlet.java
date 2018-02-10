@@ -9,9 +9,10 @@ import java.io.IOException;
 public class FirstServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        request.setCharacterEncoding("utf-8");
         String firstPassword = request.getParameter("firstPassword");
 
-        if("sisi@linlin".equals(firstPassword)){
+        if("思思爱淋淋".equals(firstPassword)){
             response.sendRedirect("/views/login/login.jsp");
             return;
         }

@@ -10,12 +10,14 @@
 <head>
     <title>思淋的秘密空间</title>
 </head>
-<body>
+<body background="/resources/img/back4.jpeg">
 <div id="div" style="margin-left:40%;margin-top:10%;width:30%; height:30%; border:0px solid #000;">
     <span style="color:red;font-weight:bolder;font-size:25px">联系开发人员获取访问密码!
     <br>
     方可访问后面内容！
     </span>
+    <br>
+    <br>
 
     <form action="/firstServlet" method="post">
 
