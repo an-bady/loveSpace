@@ -27,15 +27,13 @@
     </span>
     <form action="/loginServlet" method="post">
         账号： <input type="text" name="name"><br>
-        密码： <input type="password" name="password"><br>
+        密码： <input type="password" name="password"><br><br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="submit" value="登陆">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input style="width: 50px" type="submit" value="登陆">
     </form>
 
-    <br>
-    <br>
     <br>
     <br>
     <br>

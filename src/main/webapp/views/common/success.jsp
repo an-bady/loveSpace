@@ -18,7 +18,7 @@
     <br>
     <br>
     <a href="/views/login/login.jsp">
-        <span style="color:pink;font-weight:bolder;font-size:25px">返回登录</span></a>
+        <span style="color:rebeccapurple;font-weight:bolder;font-size:25px">返回登录</span></a>
 
 </div>
 

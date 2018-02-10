@@ -17,7 +17,7 @@
     <br>
     <br>
     <a href="/views/common/first.jsp">
-        <span style="color:pink;font-weight:bolder;font-size:25px">返回</span></a>
+        <span style="color:rebeccapurple;font-weight:bolder;font-size:25px">返回</span></a>
 
 </div>
 
