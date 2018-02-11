@@ -292,7 +292,7 @@
         }
 
         .cube1, .cube2 {
-            background-color: #FFFF00;
+            background-color: #00FFFF;
             width: 30px;
             height: 30px;
             position: absolute;
@@ -374,25 +374,23 @@
         <div class="cube1"></div>
         <div class="cube2"></div>
     </div>
-    <div class="spinnerLin2" style="margin-top: 25%;float: left;width: 8%;height: 10%"></div>
-    <div style="margin-top: 5%;float: left;width: 30%">
-        <span style="color:wheat;font-weight:bold;font-size:45px">淋 宝～</span>
+    <div class="spinnerSi1" style="margin-top: 25%;float: left;width: 8%;height: 10%"></div>
+    <div style="text-align: center;display: block; margin-top: 0%;float: left;width: 30%">
+        <span style="color:wheat;font-weight:bold;font-size:45px">淋 宝</span>
         <br><br><br>
         <span style="color:wheat;font-weight:bold;font-size:20px">静下心来先听首歌吧～</span>
         <br><br><br>
         <span style="color:blueviolet;font-weight:bold;font-size:50px">情人节快乐!</span>
-        <br><br><br><br><br><br><br> <br><br><br><br>
+        <br><br><br><br><br><br><br><br>
         <a href="https://ai.bbai520.com/love.php?123&id=16009"><span style="color:cornflowerblue;font-weight:bolder;font-size:15px"><--点击进入我们的世界--></span></a>
-        <br>
         <br>
         <br>
         <a href="/views/show/photos.html"><span style="color:cornflowerblue;font-weight:bolder;font-size:15px"><--点击进入我们的相册--></span></a>
         <br>
         <br>
-        <br>
-        <a href="/views/show/diary.jsp"><span style="color:cornflowerblue;font-weight:bolder;font-size:15px"><--💗&nbsp;Love Diary/Story--></span></a>
+        <a href="/views/show/diary/diary.jsp"><span style="color:cornflowerblue;font-weight:bolder;font-size:15px"><--💗&nbsp;Love Diary/Story--></span></a>
     </div>
-    <div class="spinnerSi1" style="margin-top: 25%;float: left;width: 8%;height: 10%"></div>
+    <div class="spinnerLin2" style="margin-top: 25%;float: left;width: 8%;height: 10%"></div>
     <div class="spinner2" style="margin-top: 15%;float: left;width: 5%">
         <div class="rect1"></div>
         <div class="rect2"></div>

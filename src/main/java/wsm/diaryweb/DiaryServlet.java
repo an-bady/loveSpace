@@ -1,4 +1,4 @@
-package wsm.diary;
+package wsm.diaryweb;
 
 import wsm.common.CommonPath;
 
@@ -17,8 +17,9 @@ public class DiaryServlet extends HttpServlet {
         String user = (String) request.getSession().getAttribute("user");
         String weather = request.getParameter("weather");
         String mood = request.getParameter("mood");
-        String diary = request.getParameter("diary");
+        String diary = request.getParameter("diaryweb");
         String isPublic = request.getParameter("isPublic");
+        String title = request.getParameter("title");
 
         if(isPublic == null){
             isPublic = "private";
@@ -28,7 +29,7 @@ public class DiaryServlet extends HttpServlet {
                 .format(Calendar.getInstance()
                         .getTime());
 
-        File file = new File(CommonPath.DiaryPath+"/"+user+"_"+datetime+"_"+isPublic+".txt");
+        File file = new File(CommonPath.DiaryPath+"/"+title+"_"+user+"_"+datetime+"_"+isPublic+".txt");
         BufferedWriter bw =
                 new BufferedWriter(new FileWriter(file));
 

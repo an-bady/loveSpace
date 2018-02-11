@@ -23,21 +23,22 @@
             .getTime()); //获取系统时间
     request.setAttribute("datetime",datetime);
 %>
-<div id="div" style="margin-left:5%;margin-top:5%;width:100%; height:100%; border:0px solid #000;">
+<div id="div" style="margin-left:5%;margin-top:0%;width:100%; height:100%; border:0px solid #000;">
 
     <span style="color:midnightblue;font-weight:bolder;font-size:15px;font-weight:900">
         亲爱的${sessionScope.user}:
         <br>
-        <br>
-        &nbsp;&nbsp;欢迎来到您的专属日记本空间!(在这里，您可以尽情吐槽您的另一半－－思思先生)
+        &nbsp;&nbsp;欢迎来到你的专属日记本空间!(在这里，您可以尽情吐槽您的另一半－－思思先生)
         <br>
         Our goal is to solve all the dissatisfaction!
         <br>
-    </span>
+        你还可以浏览或编辑以前日记～<a href="/handleDiaryServlet?method=diaryList">点击传送门</a>
 
+    </span>
+    <br>
     <form action="/diaryServlet" method="post">
-        <span style="color:black;font-weight:bolder;font-size:15px;font-weight:900">
-        &nbsp;&nbsp; &nbsp;&nbsp;
+        <span style="color:midnightblue;font-weight:bolder;font-size:15px;font-weight:900">
+
         天气 : <select name="weather" id="idWeather">
                 <option value="sun">阳光</option>
                 <option value="cloudy">多云</option>
@@ -50,12 +51,19 @@
                 <option value="sad">哀伤</option>
                 <option value="miss">思念</option>
             </select>
-        公开给另一半：<input type="checkbox" name="isPublic" value="public" checked="checked">
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        公开给另一半：<input type="checkbox" name="isPublic" value="public">
+
         日期 : <input style="width: 7%" name="datetime" value="${requestScope.datetime}" readonly="true">
-            &nbsp;&nbsp;&nbsp;&nbsp;
+
             日记人 : <input style="width: 5%" name="user" value="${sessionScope.user}" readonly="true">
+        <br>
+            起一个好听的标题吧（方便以后查看日记）：
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
+            <input type="text" name="title" value="">
         <br>
         </span>
         <textarea name="diary" style="color:blue;font-weight:bolder;font-size:14px;font-weight:400" name="diaryString" cols="55" rows="25">

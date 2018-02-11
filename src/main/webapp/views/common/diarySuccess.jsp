@@ -12,11 +12,11 @@
 </head>
 <body background="/resources/img/back4.jpeg">
 
-<div id="div" style="margin-left:40%;margin-top:10%;width:30%; height:30%; border:0px solid #000;">
+<div id="div" style="text-align: center;display: block; margin-left:40%;margin-top:10%;width:30%; height:30%; border:0px solid #000;">
     <span style="color:pink;font-weight:bolder;font-size:25px">提交成功!</span>
     <br>
     <br>
-    <a href="/views/show/diary.jsp">
+    <a href="/views/show/diary/diary.jsp">
         <span style="color:rebeccapurple;font-weight:bolder;font-size:15px">返回继续提交日记</span></a>
     <br>
     <a href="/views/show/loading.jsp">
