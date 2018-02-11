@@ -37,7 +37,7 @@
 
     <form action="/diaryServlet" method="post">
         <span style="color:black;font-weight:bolder;font-size:15px;font-weight:900">
-        &nbsp;&nbsp;
+        &nbsp;&nbsp; &nbsp;&nbsp;
         天气 : <select name="weather" id="idWeather">
                 <option value="sun">阳光</option>
                 <option value="cloudy">多云</option>
@@ -50,11 +50,15 @@
                 <option value="sad">哀伤</option>
                 <option value="miss">思念</option>
             </select>
+        公开给另一半：<input type="checkbox" name="isPublic" value="public" checked="checked">
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         日期 : <input style="width: 7%" name="datetime" value="${requestScope.datetime}" readonly="true">
-        日记人 : <input style="width: 5%" name="user" value="${sessionScope.user}" readonly="true">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            日记人 : <input style="width: 5%" name="user" value="${sessionScope.user}" readonly="true">
         <br>
         </span>
-        <textarea name="diary" style="color:blue;font-weight:bolder;font-size:14px;font-weight:400" name="diaryString" cols="62" rows="25">
+        <textarea name="diary" style="color:blue;font-weight:bolder;font-size:14px;font-weight:400" name="diaryString" cols="55" rows="25">
         今天我....
         </textarea>
         <input type="submit" value="提交日记！">

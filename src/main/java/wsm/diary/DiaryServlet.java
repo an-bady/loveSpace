@@ -18,12 +18,17 @@ public class DiaryServlet extends HttpServlet {
         String weather = request.getParameter("weather");
         String mood = request.getParameter("mood");
         String diary = request.getParameter("diary");
+        String isPublic = request.getParameter("isPublic");
+
+        if(isPublic == null){
+            isPublic = "private";
+        }
 
         String datetime=new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss")
                 .format(Calendar.getInstance()
                         .getTime());
 
-        File file = new File(CommonPath.DiaryPath+"/"+user+"_"+datetime+".txt");
+        File file = new File(CommonPath.DiaryPath+"/"+user+"_"+datetime+"_"+isPublic+".txt");
         BufferedWriter bw =
                 new BufferedWriter(new FileWriter(file));
 
@@ -37,6 +42,7 @@ public class DiaryServlet extends HttpServlet {
         bw.newLine();
 
         bw.write(diary);
+
         bw.close();
 
         response.sendRedirect("/views/common/diarySuccess.jsp");
