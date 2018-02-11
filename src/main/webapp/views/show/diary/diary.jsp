@@ -57,13 +57,11 @@
 
             日记人 : <input style="width: 5%" name="user" value="${sessionScope.user}" readonly="true">
         <br>
-            起一个好听的标题吧（方便以后查看日记）：
-            <br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;
-            <input type="text" name="title" value="">
+            &nbsp;title:
+            <input type="text" name="title" value="My-Diary">
         <br>
         </span>
         <textarea name="diary" style="color:blue;font-weight:bolder;font-size:14px;font-weight:400" name="diaryString" cols="55" rows="25">

@@ -17,7 +17,7 @@ public class DiaryServlet extends HttpServlet {
         String user = (String) request.getSession().getAttribute("user");
         String weather = request.getParameter("weather");
         String mood = request.getParameter("mood");
-        String diary = request.getParameter("diaryweb");
+        String diary = request.getParameter("diary");
         String isPublic = request.getParameter("isPublic");
         String title = request.getParameter("title");
 
