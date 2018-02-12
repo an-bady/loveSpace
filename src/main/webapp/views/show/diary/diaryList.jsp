@@ -82,7 +82,8 @@
         data-options="fitColumns:true,rownumbers:true,url:'/handleDiaryServlet?method=showDiaryList',method:'get'">
             <thead>
                 <tr>
-                    <th data-options="checkbox:true, field:'name',width:160,align:'center'">日记名称</th>
+                    <th data-options="checkbox:true,field:'originName',width:160,align:'center'"></th>
+                    <th data-options="field:'name',width:160,align:'center'">日记名称</th>
                     <th data-options="field:'dateTime',width:160,align:'center'">日记时间</th>
                     <th data-options="field:'author',width:160,align:'center'">日记作者</th>
                     <th data-options="field:'permission',width:160,align:'center'">日记权限</th>

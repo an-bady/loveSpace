@@ -137,6 +137,7 @@ public class HandleDiaryServlet extends HttpServlet {
                 map.put("dateTime",d.getDateTime());
                 map.put("author",d.getAuthor());
                 map.put("permission",d.getPermission());
+                map.put("originName",d.getOriginName());
                 total += 1;
                 rows.add(map);
 
