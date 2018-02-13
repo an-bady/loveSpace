@@ -11,7 +11,7 @@
 <%@include file="../../common/baseui.jsp"%>
 <html>
 <head>
-    <title>${sessionScope.user}的日记列表</title>
+
 </head>
 <body background="/resources/img/diaryback1.jpeg">
 
@@ -19,25 +19,25 @@
         <div data-options="region: 'north', split: true, title: ''" style="height: 80px;">
             <form class="formTable" id="formSearch" action="">
                 <div style="background-color:#F5F5F5" >
-                    <a href="javascript(0)" class="easyui-linkbutton" iconCls="icon-search" id="btnSearch" plain="true" onclick="cx()">
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-search" id="btnSearch" plain="true" onclick="cx()">
                         查询
                     </a>
-                    <a href="javascript(0)" class="easyui-linkbutton" iconCls="icon-redo" plain="true" onclick="export_list()">
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-redo" plain="true" onclick="export_list()">
                         下载日记
                     </a>
-                    <a href="javascript(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="export_list()">
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="export_list()">
                         在线编辑日记
                     </a>
-                    <a href="javascript(0)" class="easyui-linkbutton" iconCls="icon-ok" plain="true" onclick="export_list()">
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" plain="true" onclick="showDiary()">
                         查看日记
                     </a>
-                    <a href="javascript(0)" class="easyui-linkbutton" iconCls="icon-lock" plain="true" onclick="lock()">
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-lock" plain="true" onclick="lockPermission()">
                         更改日记权限
                     </a>
-                    <a href="javascript(0)" class="easyui-linkbutton" iconCls="icon-cancel" plain="true" onclick="lock()">
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" plain="true" onclick="deleDiary()">
                         删除日记
                     </a>
-                    <a style="float:right" href="javascript(0)" class="easyui-linkbutton" iconCls="icon-filter" id="btnSetFilter" plain="true" onclick="filter()">
+                    <a style="float:right" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-filter" id="btnSetFilter" plain="true" onclick="filter()">
                         过滤
                     </a>
                 </div>
@@ -79,7 +79,8 @@
 
         <br>
         <table id="dg" class="easyui-datagrid"
-        data-options="fitColumns:true,rownumbers:true,url:'/handleDiaryServlet?method=showDiaryList',method:'get'">
+        data-options="
+        checkOnSelect:true,singleSelect:true,fitColumns:true,rownumbers:true,url:'/handleDiaryServlet?method=showDiaryList',method:'get'">
             <thead>
                 <tr>
                     <th data-options="checkbox:true,field:'originName',width:160,align:'center'"></th>
@@ -100,5 +101,149 @@
             <span style="color:rebeccapurple;font-weight:bolder;font-size:15px">返回主页</span></a>
         <br>
     </div>
+<div id="dlg"></div>
+
+<script type="text/javascript">
+
+
+    //创建查询对象并查询
+    function cx(){
+        $("#dg").datagrid('load');
+    }
+
+    $('#dg').datagrid({
+        rowStyler:function (index,row){
+            if ((index % 2)==0){
+                return 'background-color:#E0F8FF;color:#000000;font-weight:bold;';
+            }
+            else{
+                return 'background-color:#FFFBFD;color:#000000;font-weight:bold;';
+            }
+
+
+
+        },
+
+    });
+
+    function lockPermission() {
+        console.log("-----get in----");
+        // 如果没有选中行，则报错
+        // 获取所有选中的行
+        var rows = $("#dg").datagrid("getSelections");
+
+        console.log(rows);
+        if(rows==null || rows.length<=0) {
+            alert('没有选中要改权限的日记！');
+            return;
+        }
+        var fileName = rows[0].originName;
+        var permission = rows[0].permission;
+        if(permission == '公开'){
+            permission = '设为隐私日记？';
+        }else{
+            permission = '设为公开日记？'
+        }
+
+        jQuery.messager.confirm('提示:',
+            '确定将该日记'+permission, function(event){
+                console.log("--- event : + " + event);
+                if (event) {
+                    $.ajax({
+                        type: 'GET',
+                        url: '/handleDiaryServlet?method=pubDiary',
+                        data: {fileName:fileName},
+                        success : function(data) {
+                            console.log("---data : "+data);
+                            if (data.result == 'success'){
+                                console.log("----result: " + data.message);
+                                showInfo(data.message);
+                            }else{
+                                console.log("----result: " + data.message);
+                                // 提示错误信息
+                                showInfo(data.message, "error");
+                            }
+                            cx();
+                        }
+                    });
+                }
+            });
+    }
+
+    function deleDiary() {
+        console.log("-----get in----");
+        // 如果没有选中行，则报错
+        // 获取所有选中的行
+        var rows = $("#dg").datagrid("getSelections");
+
+        console.log(rows);
+        if(rows==null || rows.length<=0) {
+            alert('没有选中要删除的日记！');
+            return;
+        }
+        var fileName = rows[0].originName;
+
+        jQuery.messager.confirm('提示:',
+            '确定要删除该美好回忆嘛？', function(event){
+                console.log("--- event : + " + event);
+                if (event) {
+                    $.ajax({
+                        type: 'GET',
+                        url: '/handleDiaryServlet?method=deleteDiary',
+                        data: {fileName:fileName},
+                        success : function(data) {
+                            console.log("---data : "+data);
+                            if (data.result == 'success'){
+                                console.log("----result: " + data.message);
+                                showInfo(data.message);
+                            }else{
+                                console.log("----result: " + data.message);
+                                // 提示错误信息
+                                showInfo(data.message, "error");
+                            }
+                            cx();
+                        }
+                    });
+                }
+            });
+    }
+
+    function showDiary() {
+        console.log("-----get in----");
+        // 如果没有选中行，则报错
+        // 获取所有选中的行
+        var rows = $("#dg").datagrid("getSelections");
+
+        console.log(rows);
+        if(rows==null || rows.length<=0) {
+            alert('没有选中要看的日记！');
+            return;
+        }
+        var fileName = rows[0].originName;
+
+
+
+        d=$("#dlg").dialog({
+            title: rows[0].name,
+            width: 350,
+            height: 400,
+            href:'/handleDiaryServlet?method=showDiary&fileName='+fileName,
+            maximizable:true,
+            modal: true,
+            autoCloseOnEsc: true,
+            buttons:[
+                {
+                    text:'关闭',
+                    handler:function(){
+                        d.panel('close');
+                    }
+                }]
+        });
+
+
+
+    }
+
+</script>
 </body>
 </html>

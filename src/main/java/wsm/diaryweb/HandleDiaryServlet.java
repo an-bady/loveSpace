@@ -8,9 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -153,28 +151,7 @@ public class HandleDiaryServlet extends HttpServlet {
 
     }
 
-    /**
-     * 以JSON格式输出
-     * @param response
-     */
-    protected void responseOutWithJson(HttpServletResponse response,
-                                       Object responseObject) {
-        //将实体对象转换为JSON Object转换
-        JSONObject responseJSONObject = JSONObject.fromObject(responseObject);
-        response.setCharacterEncoding("UTF-8");
-        response.setContentType("application/json; charset=utf-8");
-        PrintWriter out = null;
-        try {
-            out = response.getWriter();
-            out.append(responseJSONObject.toString());
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (out != null) {
-                out.close();
-            }
-        }
-    }
+
 
     /**删除日记
      *
@@ -186,7 +163,18 @@ public class HandleDiaryServlet extends HttpServlet {
     public void deleteDiary(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
 
-        System.out.println("delete Diary!");
+
+        String fileName = request.getParameter("fileName");
+
+        File f = new File(CommonPath.DiaryPath+"/"+fileName);
+
+        f.delete();
+
+        String s = successMessage("删除成功");
+
+        responseOutWithJson(response,s);
+
+
 
     }
     /**编辑日记
@@ -211,6 +199,26 @@ public class HandleDiaryServlet extends HttpServlet {
     public void pubDiary(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
 
+        String fileName = request.getParameter("fileName");
+
+        File f = new File(CommonPath.DiaryPath+"/"+fileName);
+
+        String permission = fileName.replace(".txt","").substring(fileName.lastIndexOf("_")+1);
+        String newFile = fileName.replace(".txt","").replace("_"+permission,"");
+        File f1 = null;
+        if(permission.equals("public")){
+             f1 = new File(CommonPath.DiaryPath+"/"+newFile+"_private.txt");
+        }else {
+             f1 = new File(CommonPath.DiaryPath+"/"+newFile+"_public.txt");
+        }
+
+        f.renameTo(f1);
+
+        String s = successMessage("修改权限成功");
+
+        responseOutWithJson(response,s);
+
+
 
     }
     /*查看日记
@@ -223,7 +231,63 @@ public class HandleDiaryServlet extends HttpServlet {
     public void showDiary(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
 
+        String fileName = request.getParameter("fileName");
 
+        File f = new File(CommonPath.DiaryPath+"/"+fileName);
+
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json; charset=utf-8");
+        PrintWriter out = response.getWriter();
+
+        BufferedReader br = new BufferedReader(new FileReader(f));
+        String s;
+        while ((s=br.readLine())!=null){
+            for(char c : s.toCharArray()){
+                if(c == ' '){
+                    out.append("&nbsp");
+                }else{
+                    out.append(c);
+                }
+            }
+            out.append("<br>");
+        }
+
+
+    }
+
+
+    /**
+     * 成功消息
+     *
+     * @return
+     */
+    public String successMessage(String message)
+    {
+        return "{\"result\":\"success\", \"message\":\"" + message + "\", \"level\":\"" + "info"+ "\"}";
+    }
+
+
+    /**
+     * 以JSON格式输出
+     * @param response
+     */
+    protected void responseOutWithJson(HttpServletResponse response,
+                                       Object responseObject) {
+        //将实体对象转换为JSON Object转换
+        JSONObject responseJSONObject = JSONObject.fromObject(responseObject);
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json; charset=utf-8");
+        PrintWriter out = null;
+        try {
+            out = response.getWriter();
+            out.append(responseJSONObject.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (out != null) {
+                out.close();
+            }
+        }
     }
 
 }
