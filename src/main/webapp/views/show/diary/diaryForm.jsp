@@ -11,9 +11,11 @@
 <head>
 </head>
 <body>
-
-<textarea style="width: 350px;height: 450px">
-    ${diary}
+<form id="saveForm" action="/handleDiaryServlet?method=saveDiary" method="post">
+ <input type="hidden" id="txtFileName" name="fileName" value="${fileName}">
+<textarea name="diary" id="txtDiary" style="width: 350px;height: 450px">
+${diary}
 </textarea>
+</form>
 </body>
 </html>

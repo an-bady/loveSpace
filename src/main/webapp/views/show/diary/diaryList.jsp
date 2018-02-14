@@ -22,10 +22,10 @@
                     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-search" id="btnSearch" plain="true" onclick="cx()">
                         查询
                     </a>
-                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-redo" plain="true" onclick="export_list()">
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-redo" plain="true" onclick="downDiary()">
                         下载日记
                     </a>
-                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="export_list()">
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editDiary()">
                         在线编辑日记
                     </a>
                     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" plain="true" onclick="showDiary()">
@@ -125,6 +125,67 @@
         },
 
     });
+
+    function editDiary() {
+        console.log("-----get in----");
+        // 如果没有选中行，则报错
+        // 获取所有选中的行
+        var rows = $("#dg").datagrid("getSelections");
+
+        console.log(rows);
+        if(rows==null || rows.length<=0) {
+            alert('没有选中要编辑的日记！');
+            return;
+        }
+        var fileName = rows[0].originName;
+
+
+        d1=$("#dlg").dialog({
+            title: rows[0].name,
+            width: 350,
+            height: 400,
+            href:'/handleDiaryServlet?method=editDiary&fileName='+fileName,
+            maximizable:true,
+            modal: true,
+            autoCloseOnEsc: true,
+            buttons:[
+                {
+                    text:'保存',
+                    handler:function(){
+                       save();
+                       d1.panel('close');
+
+
+                    }
+                },
+                {
+                    text:'关闭',
+                    handler:function(){
+                        d1.panel('close');
+                    }
+                }]
+        });
+    }
+    function save() {
+        $.ajax({
+            type: 'post',
+            url: '/handleDiaryServlet?method=saveDiary',
+            data: {diary:$('#txtDiary').val(),
+            fileName:$('#txtFileName').val()},
+            success : function(data) {
+                console.log("---data : "+data);
+                if (data.result == 'success'){
+                    console.log("----result: " + data.message);
+                    showInfo(data.message);
+                }else{
+                    console.log("----result: " + data.message);
+                    // 提示错误信息
+                    showInfo(data.message, "error");
+                }
+                cx();
+            }
+        });
+    }
 
     function lockPermission() {
         console.log("-----get in----");

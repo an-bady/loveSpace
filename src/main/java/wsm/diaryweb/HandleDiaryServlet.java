@@ -10,10 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class HandleDiaryServlet extends HttpServlet {
 
@@ -177,15 +175,76 @@ public class HandleDiaryServlet extends HttpServlet {
 
 
     }
-    /**编辑日记
+    /**保存日记
      *
      * @param request
      * @param response
      * @throws ServletException
      * @throws IOException
      */
+    public void saveDiary(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException{
+
+        String fileName = request.getParameter("fileName");
+
+        File f = new File(CommonPath.DiaryPath+"/"+fileName);
+
+        String diary = request.getParameter("diary");
+
+
+        String datetime=new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss")
+                .format(Calendar.getInstance()
+                        .getTime());
+
+        f.delete();
+
+        BufferedWriter bw = new BufferedWriter(new FileWriter(f));
+        bw.write("## 最后更新时间：");
+        bw.write(datetime);
+        bw.newLine();
+        bw.write(diary);
+        bw.close();
+
+        responseOutWithJson(response,successMessage("更改保存成功！"));
+
+    }
+
+
+        /**编辑日记
+         *
+         * @param request
+         * @param response
+         * @throws ServletException
+         * @throws IOException
+         */
     public void editDiary(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
+
+        String fileName = request.getParameter("fileName");
+
+        File f = new File(CommonPath.DiaryPath+"/"+fileName);
+
+        BufferedReader br = new BufferedReader(new FileReader(f));
+        String s;
+        StringBuffer sb = new StringBuffer();
+
+        while((s=br.readLine())!=null){
+            for(char c : s.toCharArray()){
+                if(c == ' '){
+                    sb.append("&nbsp");
+                }else{
+                    sb.append(c);
+                }
+            }
+            sb.append("\r\n");
+
+        }
+
+        request.setAttribute("diary",sb.toString());
+        request.setAttribute("fileName",fileName);
+
+        request.getRequestDispatcher("/views/show/diary/diaryForm.jsp").forward(request,response);
+
 
 
     }
