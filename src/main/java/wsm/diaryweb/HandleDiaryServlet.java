@@ -228,6 +228,8 @@ public class HandleDiaryServlet extends HttpServlet {
 
         String fileName = request.getParameter("fileName");
 
+        String user = (String)request.getSession().getAttribute("user");
+
         File f = new File(CommonPath.DiaryPath+"/"+fileName);
 
         BufferedReader br = new BufferedReader(new FileReader(f));
@@ -248,6 +250,11 @@ public class HandleDiaryServlet extends HttpServlet {
 
         request.setAttribute("diary",sb.toString());
         request.setAttribute("fileName",fileName);
+        if(fileName.contains(user)){
+            request.setAttribute("read","");
+        }else{
+            request.setAttribute("read","readOnly='readOnly'");
+        }
 
         request.getRequestDispatcher("/views/show/diary/diaryForm.jsp").forward(request,response);
 
