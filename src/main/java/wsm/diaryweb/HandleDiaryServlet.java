@@ -113,9 +113,10 @@ public class HandleDiaryServlet extends HttpServlet {
                 Diary d = new Diary();
                 String name = f.getName();
                 d.setOriginName(name);
-                d.setAuthor(userName);
                 String title = name.substring(0,name.indexOf("_"));
+                String author = name.substring(name.indexOf(title)+title.length()+1,name.indexOf("_",name.indexOf(title)+title.length()+1));
                 d.setName(title);
+                d.setAuthor(author);
                 if(name.contains("public")){
                     d.setPermission("公开");
                     name = name.replace("_public","");
@@ -161,6 +162,9 @@ public class HandleDiaryServlet extends HttpServlet {
     public void deleteDiary(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
 
+        if(filter(request,response) == 1){
+            return;
+        }
 
         String fileName = request.getParameter("fileName");
 
@@ -184,7 +188,9 @@ public class HandleDiaryServlet extends HttpServlet {
      */
     public void saveDiary(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
-
+        if(filter(request,response) == 1){
+            return;
+        }
         String fileName = request.getParameter("fileName");
 
         File f = new File(CommonPath.DiaryPath+"/"+fileName);
@@ -257,6 +263,9 @@ public class HandleDiaryServlet extends HttpServlet {
      */
     public void pubDiary(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
+        if(filter(request,response) == 1){
+            return;
+        }
 
         String fileName = request.getParameter("fileName");
 
@@ -324,6 +333,15 @@ public class HandleDiaryServlet extends HttpServlet {
     {
         return "{\"result\":\"success\", \"message\":\"" + message + "\", \"level\":\"" + "info"+ "\"}";
     }
+    /**
+     * 失败消息
+     *
+     * @return
+     */
+    public String failMessage(String message)
+    {
+        return "{\"result\":\"fail\", \"message\":\"" + message + "\", \"level\":\"" + "info"+ "\"}";
+    }
 
 
     /**
@@ -347,6 +365,22 @@ public class HandleDiaryServlet extends HttpServlet {
                 out.close();
             }
         }
+    }
+
+
+    protected int filter(HttpServletRequest request,HttpServletResponse response){
+        String fileName = request.getParameter("fileName");
+        String user = (String)request.getSession().getAttribute("user");
+        if(fileName!=null){
+            if(!fileName.contains(user)){
+                responseOutWithJson(response,failMessage("不能修改他人日记"));
+                return 1;
+            }
+        }
+        return 0;
+
+
+
     }
 
 }
