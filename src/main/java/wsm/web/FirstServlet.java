@@ -12,7 +12,7 @@ public class FirstServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         String firstPassword = request.getParameter("firstPassword");
 
-        if("凉".equals(firstPassword)){
+        if("5201314".equals(firstPassword)){
             response.sendRedirect("/views/login/login.jsp");
             return;
         }
