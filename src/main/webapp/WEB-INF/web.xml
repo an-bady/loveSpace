@@ -1,0 +1,71 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+    <filter>
+        <filter-name>charsetFilter</filter-name>
+        <filter-class>wsm.web.CharsetFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+    <filter-name>charsetFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+
+
+
+    <servlet>
+    <servlet-name>loginServlet</servlet-name>
+    <servlet-class>wsm.web.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>registerServlet</servlet-name>
+    <servlet-class>wsm.web.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>firstServlet</servlet-name>
+    <servlet-class>wsm.web.FirstServlet</servlet-class>
+  </servlet>
+    <servlet>
+        <servlet-name>diaryServlet</servlet-name>
+        <servlet-class>wsm.diaryweb.DiaryServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>handleDiaryServlet</servlet-name>
+        <servlet-class>wsm.diaryweb.HandleDiaryServlet</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+    <servlet-name>loginServlet</servlet-name>
+    <url-pattern>/loginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>registerServlet</servlet-name>
+    <url-pattern>/registerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>firstServlet</servlet-name>
+    <url-pattern>/firstServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>diaryServlet</servlet-name>
+    <url-pattern>/diaryServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>handleDiaryServlet</servlet-name>
+    <url-pattern>/handleDiaryServlet</url-pattern>
+  </servlet-mapping>
+
+
+
+
+  <welcome-file-list>
+    <welcome-file>/views/common/first.jsp</welcome-file>
+  </welcome-file-list>
+
+
+</web-app>
