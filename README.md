@@ -1,6 +1,8 @@
 # loveSpace
 建立一个与爱人之间的专属私密空间<br>
-
+![Image text](https://github.com/wangchaun/loveSpace/blob/master/src/main/img-md/diary.png)
+![Image text](https://github.com/wangchaun/loveSpace/blob/master/src/main/img-md/diary3.png)
+![Image text](https://github.com/wangchaun/loveSpace/blob/master/src/main/img-md/diaryList.png)
 ＃提供注册账号功能 <br>
 ＃提供相册功能<br>
 ＃提供日记功能（日记权限）<br>
