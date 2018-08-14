@@ -124,9 +124,9 @@ public class HandleDiaryServlet extends HttpServlet {
                     d.setPermission("秘密");
                     name = name.replace("_private","");
                 }
-                name = name.replace(userName+"_","");
                 name = name.replace(".txt","");
                 name = name.replace(title+"_","");
+                name = name.replace(author+"_","");
                 name = name.substring(0,name.indexOf("_"));
                 d.setDateTime(name);
                 Map<String,Object> map = new HashMap<>();

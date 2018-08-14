@@ -25,7 +25,7 @@ public class DiaryServlet extends HttpServlet {
             isPublic = "private";
         }
 
-        String datetime=new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss")
+        String datetime=new SimpleDateFormat("yyyy-MM-dd_HH_mm_ss")
                 .format(Calendar.getInstance()
                         .getTime());
 
