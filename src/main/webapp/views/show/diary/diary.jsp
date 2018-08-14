@@ -16,7 +16,7 @@
 </head>
 <body style="background-image: url(/resources/img/back3.png)">
 
-<embed src="/resources/music/2.mp3" loop="11" autostar="true" hidden="true"/>
+<%--<embed src="/resources/music/2.mp3" loop="11" autostar="true" hidden="true"/>--%>
 <%
     String datetime=new SimpleDateFormat("yyyy-MM-dd")
             .format(Calendar.getInstance()
